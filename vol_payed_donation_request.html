@@ -1,0 +1,31 @@
+{% extends 'vol_header.html' %}
+   {% block content %}
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+  <table class="table">
+
+      <tr>
+        <th style="color:white;">SL NO</th>
+          <th style="color:white;">USER ID</th>
+        <TH style="color:white;"> DETAILS</TH>
+        <th style="color:white;">DONATION DATE</th>
+        <th style="color:white;">AMOUNT</th>
+      </tr>
+    {% for data in data %}
+    <tr>
+      <td style="color:white;">{{ forloop.counter }}</td>
+        <td style="color:white;">{{data.3}}</td>
+      <td style="color:white;">{{data.2}}</td>
+      <td style="color:white;">{{data.7}}</td>
+      <td style="color:white;">{{data.8}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+
+    </div>
+  </section><!-- End Hero -->
+
+      {% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'admin_header.html' %}
+   {% block content %}
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+  <table class="table">
+      <tr>
+        <th colspan="8" style="color:red;"><h2>Volunteers</h2></th>
+      </tr>
+      <tr>
+        <th style="color:white;">SL NO</th>
+        <th style="color:white;">Vol Id</th>
+        <TH style="color:white;"> Name</TH>
+        <th style="color:white;">Address</th>
+        <th style="color:white;">Email</th>
+        <th style="color:white;">Phone</th>
+          <th></th>
+        <th></th>
+
+      </tr>
+    {% for data in data %}
+    <tr>
+      <td style="color:white;">{{ forloop.counter }}</td>
+      <td style="color:white;">{{data.0}}</td>
+      <td style="color:white;">{{data.1}}</td>
+      <td style="color:white;">{{data.2}}</td>
+      <td style="color:white;">{{data.4}}</td>
+      <td style="color:white;">{{data.3}}</td>
+        <td><a href="../admin_view_vol_post/{{data.0}}"> Posts</a></td>
+      <td><a href="../admin_view_money_spend/{{data.0}}"> Money Spends</a></td>
+
+    </tr>
+    {% endfor %}
+
+  </table>
+
+
+    </div>
+  </section><!-- End Hero -->
+
+      {% endblock %}

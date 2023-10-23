@@ -1,0 +1,36 @@
+{% extends 'user_header1.html' %}
+   {% block content %}
+<head>
+  <title>Get Coordinates</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</head>
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+    <a href="../../approved_donation_requests" style="float:left;">back</a>
+  <table class="table">
+    <form  method="post">
+      {% csrf_token %}
+      <tr>
+        <th colspan="2"><h2>PROCEED ITEM DETAILS</h2></th>
+      </tr>
+      <tr>
+        <th  style="color:white;" for="location">Location:</th>
+        <td><input type="text" id="location" name="location"></td>
+      </tr>
+
+      <th style="color:white;">Enter Item Details:</th>
+      <td><input type="text" name="item_details" required >  </td>
+    </tr>
+
+    <tr>
+      <th></th>
+      <td><input type="submit" value="add"></td>
+    </tr>
+</form>
+  </table>
+
+
+    </div>
+  </section>
+
+      {% endblock %}

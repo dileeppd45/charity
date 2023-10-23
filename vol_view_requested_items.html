@@ -1,0 +1,33 @@
+{% extends 'vol_headernologout.html' %}
+   {% block content %}
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+<h2>Donation Item Requests</h2>
+  <table class="table">
+
+      <tr>
+        <th style="color:white;">SL NO</th>
+          <th style="color:white;">USER ID</th>
+        <TH style="color:white;"> DETAILS</TH>
+        <th style="color:white;">DATE</th>
+        <th style="color:white;">LOCATION</th>
+        <th style="color:white;"></th>
+      </tr>
+    {% for data in data %}
+    <tr>
+      <td style="color:white;">{{ forloop.counter }}</td>
+        <td style="color:white;">{{data.1}}</td>
+      <td style="color:white;">{{data.3}}</td>
+      <td style="color:white;">{{data.2}}</td>
+      <td style="color:white;"><a href="{{data.7}}" >view</a></td>
+      <td style="color:white;"><a href="../accept_donation_items/{{data.0}}">Accept Request</a></td>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+
+    </div>
+  </section><!-- End Hero -->
+
+      {% endblock %}

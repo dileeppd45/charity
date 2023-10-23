@@ -1,0 +1,29 @@
+{% extends 'user_header.html' %}
+   {% block content %}
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+<a href="../view_posts" style="float:left;">back</a>
+
+  <table class="table">
+    <form action="../send_donation_response" method="post">
+      {% csrf_token %}
+      <tr>
+        <th colspan="2"><h2>Send Donation Request</h2></th>
+      </tr>
+    <tr>
+      <th style="color:white;">Add Your Donation details:</th>
+      <td><input type="text" name="details">  </td>
+      <input type="hidden" name="donation_requirement_id" value="{{id}}">
+    </tr>
+    <tr>
+      <th></th>
+      <td><input type="submit" value="add"></td>
+    </tr>
+</form>
+  </table>
+
+
+    </div>
+  </section>
+
+      {% endblock %}

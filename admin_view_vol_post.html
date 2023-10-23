@@ -1,0 +1,78 @@
+{% extends 'admin_header.html' %}
+   {% block content %}
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up" style="margin-top:300px; margin-bottom: 125px; overflow:scroll; max-height:75vh;">
+        <a href="../admin_approved_volunteers" style="float:left;">back</a>
+<h3 style="color:white;">Active Posts</h3>
+      <table class="table">
+
+        <tr>
+          <th style="color:white;">SL NO</th>
+          <TH style="color:white;"> DETAILS</TH>
+          <TH style="color:white;"> POSTED DATE</TH>
+          <th style="color:white;"> PURPOSE</TH>
+          <th style="color:white;"> DATE</TH>
+          <th style="color:white;"> AMOUNT COLLECTED</TH>
+          <th style="color:white;"> AMOUNT REQUIRED</TH>
+          <th style="color:white;">DONATION PAYMENT</th>
+            <th style="color:white;">DONATED ITEMS</th>
+            <th></th>
+
+        </tr>
+      {% for data in data %}
+      <tr>
+        <td style="color:white;">{{ forloop.counter }}</td>
+        <td style="color:white;">{{data.2}}</td>
+        <td style="color:white;">{{data.4}}</td>
+        <td style="color:white;">{{data.8}}</td>
+        <td style="color:white;">{{data.6}} to {{data.7}}</td>
+        <td style="color:white;">{{data.9}}</td>
+        <td style="color:white;">{{data.10}}</td>
+        <td style="color:white;"><a href="../admin_vol_payed_donation_requests/{{data.0}}">Payed</a></td>
+        <td style="color:white;"><a href="../admin_accepted_item_requests/{{data.0}}">Collected</a></td>
+          <td style="color:white;"><a href="../admin_view_feedback/{{data.0}}">Feedback</a></td>
+
+      </tr>
+      {% endfor %}
+
+      </table>
+<br><br>
+      <h3 style="color:white;">Aborted Posts</h3>
+      <table class="table">
+
+        <tr>
+          <th style="color:white;">SL NO</th>
+          <TH style="color:white;"> DETAILS</TH>
+          <TH style="color:white;"> POSTED DATE</TH>
+          <th style="color:white;"> PURPOSE</TH>
+          <th style="color:white;"> DATE</TH>
+          <th style="color:white;"> AMOUNT COLLECTED</TH>
+          <th style="color:white;"> AMOUNT REQUIRED</TH>
+          <th style="color:white;">DONATION PAYMENT</th>
+          <th style="color:white;">DONATED ITEMS:</th>
+            <th></th>
+
+        </tr>
+      {% for data in adata %}
+      <tr>
+        <td style="color:white;">{{ forloop.counter }}</td>
+        <td style="color:white;">{{data.2}}</td>
+        <td style="color:white;">{{data.4}}</td>
+        <td style="color:white;">{{data.8}}</td>
+        <td style="color:white;">{{data.6}} to {{data.7}}</td>
+        <td style="color:white;">{{data.9}}</td>
+        <td style="color:white;">{{data.10}}</td>
+        <td style="color:white;"><a href="../admin_vol_payed_donation_requests/{{data.0}}">Payed</a></td>
+
+        <td style="color:white;"><a href="../admin_accepted_item_requests/{{data.0}}">Collected</a></td>
+          <td style="color:white;"><a href="../admin_view_feedback/{{data.0}}">Feedback</a></td>
+
+
+      </tr>
+      {% endfor %}
+
+      </table>
+    </div>
+  </section><!-- End Hero -->
+
+      {% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'vol_header.html' %}
+   {% block content %}
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+  <table class="table">
+    <form action="../make_post" method="post">
+      {% csrf_token %}
+      <tr>
+        <th colspan="2"><h2>Add Donation Requirement</h2></th>
+      </tr>
+      <tr>
+      <th style="color:white;">Add Donation Purpose:</th>
+      <td><input type="text" name="purpose" required>  </td>
+    </tr>
+    <tr>
+      <th style="color:white;">Add Donation Details:</th>
+      <td><input type="text" name="details" required>  </td>
+    </tr>
+      <tr>
+      <th style="color:white;">Add Amount Required:</th>
+      <td><input type="number" name="amount" required min="1000">  </td>
+    </tr>
+      <tr>
+      <th style="color:white;"> Date Upto:</th>
+      <td><input type="date" name="start" required > to <input type="date" name="end" required >  </td>
+    </tr>
+
+    <tr>
+      <th></th>
+      <td><input type="submit" value="add"></td>
+    </tr>
+</form>
+  </table>
+
+
+    </div>
+  </section><!-- End Hero -->
+
+      {% endblock %}

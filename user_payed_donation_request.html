@@ -1,0 +1,27 @@
+{% extends 'user_header.html' %}
+   {% block content %}
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+  <table class="table">
+
+      <tr>
+        <th style="color:white;">SL NO</th>
+        <TH style="color:white;"> MESSAGE</TH>
+        <th style="color:white;" ></th>
+      </tr>
+    {% for data in data %}
+    <tr>
+      <td style="color:white;">{{ forloop.counter }}</td>
+      <td style="color:white;">{{data.2}}</td>
+      <td style="color:white;"><a href="../user_view_donation/{{data.1}}/{{data.0}}">View Donation</a></td>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+
+    </div>
+  </section><!-- End Hero -->
+
+      {% endblock %}
