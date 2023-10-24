@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'NAME': 'aghosh_charity_service',
         'ENGINE': 'django.db.backends.mysql',
-        'USER': 'aghosh',
-        'PASSWORD': 'farm2020',
+        'USER': '#####',
+        'PASSWORD': '#####',
         'HOST': 'master.herosite.pro',
         'PORT': '3306',
         'OPTIONS': {
